@@ -1,0 +1,9 @@
+.notfound-cont{
+    text-align: center;
+    padding-top: 8rem;
+}
+
+.notfound-cont .btn{
+    margin-top: 2rem;
+    display: inline-block;
+}

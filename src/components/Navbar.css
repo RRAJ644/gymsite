@@ -1,0 +1,144 @@
+nav{
+    height: 5rem;
+    width: 100vw;
+    background: var(--color-primary);
+    display: grid;
+    place-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99;
+}
+
+.nav-cont{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    
+}
+
+.nav-toggle-btn{
+    display: none;
+}
+
+
+.logo{
+    width: 7rem;
+    display: block;
+}
+
+.nav-links{
+    display: flex;
+    gap: 3.5rem;
+    align-items: center;
+    
+}
+
+.nav-links a{
+    transition: var(--transition);
+}
+
+.nav-links a:hover{
+    color: var(--color-secondary); 
+}
+
+.active-nav{
+    position: relative;
+}
+
+.active-nav::after{
+    content: '';
+    display: block;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: var(--color-primary);
+    position: absolute;
+    left: 30%;
+    transform: rotate(45deg);
+    margin-top: 0.9rem;
+}
+
+/* Media queries */
+@media screen and (max-width:1024px){
+   .nav-toggle-btn{
+    display: inline-block;
+    background: transparent;
+    font-size: 1.8rem;
+    color: var(--color-gray-500);
+    cursor: pointer;
+   }
+
+   .nav-links{
+    position: absolute;
+    top: 100%;
+    right: 0;
+    flex-direction: column; 
+    gap: 0;   
+   }
+
+   .active-nav::after{
+     display: none;
+   }
+
+   @keyframes navAnimation{
+    to{
+        transform:rotate(360deg);
+        opacity: 1;
+    }
+   }
+
+   .nav-links li:nth-child(1){
+    animation-delay: 100ms;
+   }
+
+   .nav-links li:nth-child(2){
+    animation-delay: 200ms;
+   }
+   
+   .nav-links li:nth-child(3){
+    animation-delay: 400ms;
+   }
+
+   .nav-links li:nth-child(4){
+    animation-delay: 600ms;
+   }
+
+   .nav-links li:nth-child(5){
+    animation-delay: 800ms;
+   }
+
+   .nav-links li:nth-child(6){
+    animation-delay: 1000ms;
+   }
+
+
+   .nav-links li{
+    height: 4rem;
+    width: 100%;
+    box-shadow: -2rem 2rem 5rem rgba(0, 0, 0, 0.4);
+    animation: navAnimation 700ms ease forwards;
+    opacity: 0;
+    perspective: 1000px;
+    transform-origin: top;
+   }
+
+   .show-nav{
+    display: flex;
+   }
+   
+   .hide-nav{
+    display: none;
+   }
+
+   .nav-links li a{
+    background-color: var(--color-primary);
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1rem 5rem 1rem 3rem;
+   }
+}
+
